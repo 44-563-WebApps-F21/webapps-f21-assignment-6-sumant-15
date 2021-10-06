@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Arithmetic Page</title>
+ </head>
+<body>
+
+<h2>Sumant Chaganti computes</h2>
+
+<form>
+    <label for="form1_number">Enter a base </label>
+    <input type="number" id="form1_number" name="form1_number" value=10> <br>
+
+    <label for="form1_number2">Enter a exponent </label>
+    <input type="number" id="form1_number2" name="form1_number2" value="2"> <br>
+
+    <input type="button" onclick="powers()" value="Compute">
+</form>
+
+<p id="result">This text will be replaced </p>
+<hr>
+    <h2>Basic math calculations</h2>
+
+    <form>
+        <input type="radio" id="add" name="cal" onclick="processRadio()" value="pluss">
+        <label for="add">Plus</label></br>
+
+        <input type="radio" id="minus" name="cal" onclick="processRadio()" value="minus">
+        <label for="minus">Minus</label></br>
+
+        <input type="radio" id="times" name="cal" onclick="processRadio()" value="times">
+        <label for="times">Times</label></br>
+
+        <input type="radio" id="divide" name="cal" onclick="processRadio()" value="divide">
+        <label for="divide">Divide</label></br>
+    </form>
+    <p id="res">This text will be replaced by result </p>
+
+<script> 
+
+function powers() {
+            var n1 = document.getElementById("form1_number").value;
+            var n2 = document.getElementById("form1_number2").value;
+            console.log(n1 + " in " + n2)
+            out = document.getElementById("result")
+            var result = 0;
+            for (var i = 0; i < n2; i++) {
+                if (i == 0) {
+                    result = n1;
+                } else {
+                    result = result + " " + Math.pow(n1, i+1);
+                }
+            }
+            console.log("result " + result)
+            out.innerHTML = result
+
+        }
+
+        function processRadio() {
+            var n1 = document.getElementById("form1_number").value;
+            var n2 = document.getElementById("form1_number2").value;
+            var c = 0;
+            out = document.getElementById("res")
+            if (document.getElementById("times").checked) {
+                c = n1 * n2;
+                res.innerHTML = c;
+            }
+            if (document.getElementById("add").checked) {
+                c = parseFloat(n1) + parseFloat(n2);
+                res.innerHTML = c;
+            }
+            if (document.getElementById("minus").checked) {
+                c = n1 - n2;
+                res.innerHTML = c;
+            }
+            if (document.getElementById("divide").checked) {
+                c = n1 / n2;
+                res.innerHTML = c;
+            }
+        }
+</script>
+
+</body>
+</html> 

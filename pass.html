@@ -15,12 +15,44 @@
     <input type ="text" id="phrase" name="form1_nick" autofocus> <br>
 
     <input type="button" onclick="processPhrase()" value="Check the phrase">
+    
 </form>
 
 
 <p id="result">This text will be replaced </p>
 
-<script> 
+
+<div class="container">
+<img src="images/cheetah.jpg" id="images" onclick="newImage()" height="200" width="200">
+</div>
+
+<script>
+    
+</script>
+
+<script>
+
+var  usingImage = 1;
+    function newImage(){
+        switch(usingImage){
+            case 1:
+            document.getElementById("images").src="images/giraffe.jpg";
+            usingImage++;
+            break;
+
+            case 2:
+            document.getElementById("images").src="images/horse.jpg";
+            usingImage++;
+            break;
+
+            case 3:
+            document.getElementById("images").src="images/cheetah.jpg";
+            usingImage++;
+            break;
+        }
+    }
+
+
 var correct=0
     var wrong=0
 
@@ -40,6 +72,8 @@ var correct=0
             out.innerHTML = "Wrong:" +wrong
         }
     }
+
+    
 </script>
 
 </body>

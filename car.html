@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <title>Checkbox Example</title>
+ </head>
+<body>
+
+<h2>Sumant Chaganti orders a car</h2>
+
+<form>
+    <label for="form1_age">What is your age </label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+
+    <label for="form1_nick">What is your nickname </label>
+    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+    <input type="button" onclick="resolveForm()" value="Get values from form">
+</form>
+
+<form>
+    <input type="checkbox" id="electric" name="parts"
+    value="electric">
+    <label for="electric">electric</label></br>
+    <input type="checkbox" id="ac" name="parts"
+    value="ac">
+    <label for="ac">ac</label></br>
+    <input type="checkbox" id="gps" name="parts"
+    value="gps">
+    <label for="gps">gps</label></br>
+
+    <input type="button" onclick="orderCar()" value="Order a car">
+    </form>
+
+    <p id="result">This text will be replaced</p>
+
+
+<script>
+
+var my_car = {};
+out = document.getElementById("result")
+
+function orderCar() {
+            var my_car = {}
+            if (document.getElementById("electric").checked) {
+                my_car.electric = 'true';
+            } else {
+                my_car.electric = 'false';
+            }
+            result.innerHTML = "electric: " + my_car.electric;
+            if (document.getElementById("ac").checked) {
+                my_car.ac = 'true';
+            } else {
+                my_car.ac = 'false';
+            }
+            result.innerHTML = result.innerHTML + "\n" + "ac: " + my_car.ac;
+            if (document.getElementById("gps").checked) {
+                my_car.gps = 'true';
+            } else {
+                my_car.gps = 'false';
+            }
+            result.innerHTML = result.innerHTML + "\n" + "gps: " + my_car.gps;
+        }
+        
+function resolveForm (){
+    console.log("Getting form values")
+    age = document.getElementById("form1_age").value
+    nick = document.getElementById("form1_nick").value
+    confirmed = confirm("Are these the values? "+age+" and "+nick)
+    
+    out = document.getElementById("result")
+    if(confirmed){
+        out.innerHTML = "Values were confirmed"
+    } else {
+        out.innerHTML = "Values were not confirmed"
+    }
+}
+</script>
+
+</body>
+</html> 
