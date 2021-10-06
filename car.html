@@ -32,9 +32,29 @@
     </form>
 
     <p id="result">This text will be replaced</p>
+    <hr>
 
+    <form>
+        <label for="form1_prop">Enter a property </label>
+        <input type="text" id="form1_prop" name="form1_prop" value=color> <br>
 
+        <label for="form1_propValue">Enter a value </label>
+        <input type="text" id="form1_propValue" name="form1_propValue"> <br>
+
+        <input type="button" onclick="updateCar()" value="Update the car">
+    </form>
+
+    <p id="res">This text will be replaced</p>
+
+<hr>
 <script>
+
+function updateCar() {
+            var pa = document.getElementById("form1_prop").value;
+            var sa = document.getElementById("form1_propValue").value;
+            my_car[pa] = sa;
+            res.innerHTML = "my_car[]=  " + JSON.stringify(my_car);
+        }
 
 var my_car = {};
 out = document.getElementById("result")
@@ -60,20 +80,8 @@ function orderCar() {
             }
             result.innerHTML = result.innerHTML + "\n" + "gps: " + my_car.gps;
         }
-        
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
-    }
-}
+        out = document.getElementById("result");
+
 </script>
 
 </body>
