@@ -2,19 +2,28 @@
 <html>
  <head>
      <title>Arithmetic Page</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
  </head>
 <body>
-
-<h2>Sumant Chaganti computes</h2>
+<div class="container">
+<h2 class="text-center pt-2 pb-2 mt-4 mb-4">Sumant Chaganti computes</h2>
 
 <form>
+    <div class="form-group">
     <label for="form1_number">Enter a base </label>
     <input type="number" id="form1_number" name="form1_number" value=10> <br>
+</div>
 
+<div class="form-group">
     <label for="form1_number2">Enter a exponent </label>
     <input type="number" id="form1_number2" name="form1_number2" value="2"> <br>
-
-    <input type="button" onclick="powers()" value="Compute">
+</div>
+    <input class="btn-primary" type="button" onclick="powers()" value="Compute">
 </form>
 
 <p id="result">This text will be replaced </p>
@@ -22,20 +31,30 @@
     <h2>Basic math calculations</h2>
 
     <form>
-        <input type="radio" id="add" name="cal" onclick="processRadio()" value="pluss">
-        <label for="add">Plus</label></br>
+        <div class="form-check">
+        <input class="form-check-input" type="radio" id="add" name="cal" onclick="processRadio()" value="pluss">
+        <label class="form-check-label" for="add">Plus</label></br>
+    </div>
 
-        <input type="radio" id="minus" name="cal" onclick="processRadio()" value="minus">
-        <label for="minus">Minus</label></br>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" id="minus" name="cal" onclick="processRadio()" value="minus">
+        <label class="form-check-label" for="minus">Minus</label></br>
+    </div>
 
-        <input type="radio" id="times" name="cal" onclick="processRadio()" value="times">
-        <label for="times">Times</label></br>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" id="times" name="cal" onclick="processRadio()" value="times">
+        <label class="form-check-label" for="times">Times</label></br>
+    </div>
 
-        <input type="radio" id="divide" name="cal" onclick="processRadio()" value="divide">
-        <label for="divide">Divide</label></br>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" id="divide" name="cal" onclick="processRadio()" value="divide">
+        <label class="form-check-label" for="divide">Divide</label></br>
+    </div>
     </form>
+    <b>
     <p id="res">This text will be replaced by result </p>
-
+</b>
+</div>
 <script> 
 
 function powers() {
